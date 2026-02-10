@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 
 // Importando dados de "types.ts"
@@ -12,9 +12,46 @@ function App() {
     errorCount: 0,
   });
 
+  const [gameStatus, setGameStatus] = useState<GameStatus>("waiting")
+
   const [userInput, setUserInput] = useState("")
 
-  const originalText = "paralelepipedo"
+  const [seconds, setSeconds] = useState(0)
+
+  const originalText = "can i put my balls in your jaw?"
+
+  // Função que alterna o status do jogo entre "waiting", "typing" e "finished"
+  const handleChangeStatus = (currentText: string) => {
+    if (currentText.length === 1) {
+      setGameStatus("typing")
+
+    } else if (currentText.length === originalText.length) {
+      setGameStatus("finished")
+    }
+  }
+
+  useEffect(() => {
+    let interval:number;
+
+    if (gameStatus === 'typing') {
+      console.log(`${gameStatus}...`)
+
+      // setInterval faz alguma coisa a cada milissegundo configurado
+      interval = setInterval(() => {
+        setSeconds(num => num + 1)
+      }, 1000)
+    }
+
+    return () => {
+      if (interval) {
+        clearInterval(interval)
+        const newStatus = 'finished'
+        setGameStatus(newStatus)
+
+        console.log('Status:', newStatus)
+      }
+    }
+  }, [gameStatus])
 
   return (
     <div className='p-5'>
@@ -24,6 +61,10 @@ function App() {
         <span className='bg-white text-black px-2 py-1 rounded-sm'>WPM: {stats.wpm}</span>
         <span className='bg-white text-black px-2 py-1 rounded-sm'>Precisão: {stats.accuracy}</span>
         <span className='bg-white text-black px-2 py-1 rounded-sm'>Erros: {stats.errorCount}</span>
+
+        <div>
+          <span className='text-4xl'>{seconds}</span>
+        </div>
       </div>
 
       <div>
@@ -58,11 +99,18 @@ function App() {
 
           const currentText = e.target.value
           const index = currentText.length - 1
+
+          handleChangeStatus(currentText)
           
           if (currentText.length > userInput.length) {
-            currentText[index] !== originalText[index] ? setStats({ ...stats, errorCount: stats.errorCount + 1 }) : ""
+            currentText[index] !== originalText[index]
+              ?
+              setStats({ ...stats, errorCount: stats.errorCount + 1 })
+              :
+              ""
           } else {
-            console.log('nenhum erro')
+            ""
+            // console.log('nenhum erro')
           }
         }}
       />
