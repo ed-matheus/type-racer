@@ -18,7 +18,8 @@ function App() {
 
   const [seconds, setSeconds] = useState(0)
 
-  const originalText = "can i put my balls in your jaw?"
+  // Frase ou palavra a ser digitada pelo usuário
+  const originalText = "are you gay?"
 
   // Função que alterna o status do jogo entre "waiting", "typing" e "finished"
   const handleChangeStatus = (currentText: string) => {
@@ -30,8 +31,9 @@ function App() {
     }
   }
 
+  // Aqui o cronômetro ativa assim que o status do jogo mudar
   useEffect(() => {
-    let interval:number;
+    let interval: number;
 
     if (gameStatus === 'typing') {
       console.log(`${gameStatus}...`)
@@ -40,15 +42,23 @@ function App() {
       interval = setInterval(() => {
         setSeconds(num => num + 1)
       }, 1000)
+
+    } else if (gameStatus === 'finished') {
+      // Calculando wpm (words per minute)
+      const wpm = (originalText.length / 5) / (seconds / 60)
+      setStats({ ...stats, wpm: wpm })
+      console.log(wpm)
     }
 
     return () => {
       if (interval) {
         clearInterval(interval)
+
         const newStatus = 'finished'
         setGameStatus(newStatus)
 
         console.log('Status:', newStatus)
+        console.log('Time:', seconds)
       }
     }
   }, [gameStatus])
@@ -113,6 +123,7 @@ function App() {
             // console.log('nenhum erro')
           }
         }}
+        disabled={gameStatus === 'finished' ? true : false}
       />
     </div>
   )
