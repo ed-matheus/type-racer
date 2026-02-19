@@ -10,12 +10,13 @@ const InfoCard = ({statsName, stats, currentTheme}: any) => {
         flex
         flex-col
         w-20
+        md:w-30
       `}
     >
-      <p className={`${currentTheme === 'light' ? 'text-black' : 'text-white'} font-normal text-sm`}>
+      <p className={`${currentTheme === 'light' ? 'text-black' : 'text-white'} font-normal text-sm md:text-2xl`}>
         {statsName}
       </p>
-      <span className='text-xl'>
+      <span className='text-md md:text-2xl'>
         {stats}
       </span>
     </div>

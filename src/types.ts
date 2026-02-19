@@ -9,3 +9,9 @@ export interface StatProps {
   accuracy: number;
   errorCount: number;
 }
+
+export interface SentenceProps {
+  id: number;
+  text: string;
+  theme: string;
+}

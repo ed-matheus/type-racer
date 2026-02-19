@@ -1,73 +1,24 @@
-# React + TypeScript + Vite
+# 🏎️ Type Racer Tech
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um desafio de digitação focado em performance e precisão, desenvolvido para entusiastas de tecnologia e entusiastas de código. O projeto foca em uma experiência de usuário (UX) fluida e feedback em tempo real.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologias
+* **React 19** com **Vite**
+* **TypeScript** para tipagem estática e segurança de dados
+* **Tailwind CSS** para um design moderno e responsivo
+* **Lucide React** para ícones intuitivos
+* **LocalStorage** para persistência de preferências de tema
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Funcionalidades Principais
+* **Cálculo de WPM (Palavras por Minuto)**: Baseado na convenção internacional de 5 caracteres por palavra.
+* **Medidor de Precisão**: Feedback imediato sobre a porcentagem de acerto durante a digitação.
+* **Contador de Erros**: Identifica falhas em tempo real, bloqueando a contagem de erros ao apagar (Backspace).
+* **Dark Mode Nativo**: Alternância de temas com persistência local (LocalStorage).
+* **Banco de Frases Local**: Sistema de sorteio aleatório de frases sobre ciência, universo e tecnologia.
+* **Interface Responsiva**: Design adaptável para diferentes tamanhos de tela usando `textarea` para melhor fluxo de texto.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🧠 Desafios de Lógica Superados
+Durante o desenvolvimento, foquei em resolver problemas complexos de sincronização no React:
+1. **Gerenciamento de Ciclo de Vida**: Uso estratégico de `useEffect` para controlar o cronômetro (`setInterval`) e limpeza de memória (`clearInterval`).
+2. **Lógica de Comparação**: Algoritmo que compara a entrada do usuário com o texto original apenas em avanços de caracteres, evitando contagens errôneas de erro ao corrigir o texto.
+3. **Estados Complexos**: Organização de múltiplos estados (7 ao total) garantindo performance e legibilidade do código.

@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "text": "O Sol representa mais de noventa e nove por cento da massa do Sistema Solar.",
+    "theme": "universo"
+  },
+  {
+    "id": 2,
+    "text": "Um ano em Vênus é mais curto do que um único dia venusiano.",
+    "theme": "universo"
+  },
+  {
+    "id": 3,
+    "text": "Buracos negros podem evaporar ao longo do tempo através da Radiação Hawking.",
+    "theme": "universo"
+  },
+  {
+    "id": 4,
+    "text": "A luz do Sol leva cerca de oito minutos e vinte segundos para chegar à Terra.",
+    "theme": "ciência"
+  },
+  {
+    "id": 5,
+    "text": "O DNA humano é noventa e nove por cento idêntico ao dos chimpanzés.",
+    "theme": "ciência"
+  },
+  {
+    "id": 6,
+    "text": "Existem mais sinapses no cérebro humano do que estrelas na Via Láctea.",
+    "theme": "ciência"
+  },
+  {
+    "id": 7,
+    "text": "O jogo Tetris foi criado pelo engenheiro soviético Alexey Pajitnov em mil novecentos e oitenta e quatro.",
+    "theme": "jogos"
+  },
+  {
+    "id": 8,
+    "text": "Super Mario Bros foi um dos primeiros jogos a permitir o deslocamento lateral da tela.",
+    "theme": "jogos"
+  },
+  {
+    "id": 9,
+    "text": "O Playstation dois continua sendo o console de videogame mais vendido de todos os tempos.",
+    "theme": "jogos"
+  },
+  {
+    "id": 10,
+    "text": "Dom Quixote de Miguel de Cervantes é considerado o primeiro romance moderno da história.",
+    "theme": "livros"
+  },
+  {
+    "id": 11,
+    "text": "O Pequeno Príncipe é o livro mais traduzido do mundo depois da Bíblia.",
+    "theme": "livros"
+  },
+  {
+    "id": 12,
+    "text": "Sherlock Holmes nunca disse a frase Elementar, meu caro Watson nos livros originais.",
+    "theme": "livros"
+  },
+  {
+    "id": 13,
+    "text": "O mel é o único alimento que não apodrece e pode durar milhares de anos.",
+    "theme": "interessante"
+  },
+  {
+    "id": 14,
+    "text": "As vacas têm melhores amigas e ficam estressadas quando são separadas delas.",
+    "theme": "interessante"
+  },
+  {
+    "id": 15,
+    "text": "O primeiro computador eletrônico ocupava uma sala inteira e pesava trinta toneladas.",
+    "theme": "interessante"
+  }
+]
